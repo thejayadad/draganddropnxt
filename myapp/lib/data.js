@@ -4,7 +4,7 @@ import getServerUser from "./getServerUser"
 
 export const getWorkouts = async() => {
     const user = await getServerUser()
-    const userId = user.email;
+    const userId = user;
     console.log("userID " + userId)
     try {
         const workouts = await prisma.workout.findMany({})

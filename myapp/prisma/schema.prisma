@@ -56,7 +56,6 @@ model ExerciseBoard {
   updatedAt DateTime  @updatedAt
   name      String
   status    String
-  duration  Int
   slug      String
   exercises  Exercise[]
   workout   Workout   @relation(fields: [exerciseId], references: [id])
@@ -71,6 +70,7 @@ model Exercise {
   slug           String
   name           String
   description    String
+  duration        Int
   intensity       Intensity     @default(LOW)
   finishDate     DateTime
   order          Int
